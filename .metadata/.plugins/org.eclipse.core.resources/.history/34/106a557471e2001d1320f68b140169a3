@@ -1,0 +1,41 @@
+package com.example.demo.Model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table
+public class Model {
+  @Id
+  @Column(name="candymenu")
+  private int chocolatenum;
+  private String chocolatename;
+  private String price;
+  
+  public int getchocolatenum()
+  {
+	  return chocolatenum;
+  }
+  public void setchocolatenum(int chocolatenum);
+  {
+	 this.chocolatenum=chocolatenum;
+  }
+  public String getchocolatename()
+  {
+	 return chocolatename; 
+  }
+  public void setchocolatename(String chocolatename);
+  {
+	  this.chocolatename=chocolatename;
+  }
+  public String getprice()
+  {
+	  return price;
+  }
+  public void Setprice(String price);
+  {
+	  this.price=price;
+  }
+}

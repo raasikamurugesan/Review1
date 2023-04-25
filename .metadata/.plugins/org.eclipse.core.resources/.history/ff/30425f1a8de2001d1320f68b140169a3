@@ -1,0 +1,34 @@
+package com.example.demo.Controler;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class Controler
+{
+@Autowired
+public chocolateService cser; 
+
+@PostMapping("/ChocolateMenuideas")
+public chocolateideas addDetails(@RequestBody)
+{
+	return cser.saveInfoo(cr);
+}
+@GetMapping("/getChocolate")
+public List </chocolateideas> getDetails()
+{
+	return cser.getInfo();
+}
+@PutMapping("/updateChocolate")
+public chocolateideas updateDetails(@RequestBody chocolateideas chocolatenum)
+{
+	return cser.updateInfo(chocolatenum);
+}
+}
