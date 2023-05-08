@@ -4,28 +4,31 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.example.demo.Model.Model;
-import com.example.demo.Repository.Repository;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.example.demo.Model.chacoModel;
+import com.example.demo.Repository.chacoRepository;
 
 @Service
 public class ChacoService 
 {
 		@Autowired
-	public Repository crep;
-	public Model saveInfo(Model c)
+	public chacoRepository crepo;
+		
+	public chacoModel saveInfo(chacoModel c)
 	{
-		return crep.save(c);
+		return crepo.save(c);
 	}
-	public List<Model> getInfo()
+	public List<chacoModel> getInfo()
 	{
-		return crep.findAll();
+		return crepo.findAll();
 	}
-	public Model updateInfo(Model iu)
+	public chacoModel updateInfo(chacoModel iu)
 	{
-		return crep.saveAndFlush(iu);
+		return crepo.saveAndFlush(iu);
 	}
-	public void deleteInfo(int chocolatenum)
+	public void deleteInfo(int id)
 	{
-		crep.deleteById(chocolatenum);
+		crepo.deleteById(id);
 	}
 }
